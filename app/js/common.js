@@ -7,7 +7,7 @@ $(function() {
 			$(this).addClass('active-goods-list');
 			$(this).children().children().addClass('disImg');
 			event();
-
+			setPicture();
 			});
 		});
 			//Переключение посредствот стрелок
@@ -54,7 +54,7 @@ $(function() {
 					for(var i = 0; i < copyMyArr.length; i++){
 						if(copyMyArr[i].classList.contains('active-goods-list') && i == 0){
 							cherDown.style.color = '#f68235';
-							//colorF();
+							break;
 						}
 						else{
 							cherDown.style.color = '#d0d0d0';
@@ -68,21 +68,19 @@ $(function() {
 					}
 				}
 
-
+var mainPicture = document.querySelector('.mainPicture');
 				function setPicture(){
-					var mainPic = document.querySelector('.mainPicture');
+					
 					for(var i = 0; i < copyMyArr.length; i++){
-						var current = copyMyArr[i].classList.contains('active-goods-list');
-						if(current){
-							var currentAttribute = current.lastChild.getAttribute('src');
-							mainPic.setAttribute('src', currentAttribute);
+						if(copyMyArr[i].classList.contains('active-goods-list')){
+							var current = copyMyArr[i];
+							var currentChild = current.children[0].children[0];
+							var currentAttribute = currentChild.getAttribute('src');
+							mainPicture.setAttribute('src', currentAttribute);
 						}
 					}
 				}
-				//function colorF(){
-				//	cherDown.style.color = '#f68235';
-				//	alert();
-				//}
+				
 				
 });			
 			
