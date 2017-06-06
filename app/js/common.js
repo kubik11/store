@@ -80,9 +80,9 @@ var mainPicture = document.querySelector('.mainPicture');
 						}
 					}
 				}
-				
-				
 });			
+	//End of my an interactive list			
+				
 			
 		
 		
