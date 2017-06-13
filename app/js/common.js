@@ -82,12 +82,35 @@ var mainPicture = document.querySelector('.mainPicture');
 				}
 });			
 	//End of my an interactive list			
-				
-			
-		
-		
-	
 
+	var color = document.querySelectorAll('.colors');
+	var col = Array.prototype.forEach;
+	 col.call(color, function(elem){
+
+		elem.addEventListener('click', function(e){
+			col.call(color, function(i){
+				i.classList.remove('colors-active');
+			});
+				
+				e.target.classList.add('colors-active');			
+		});
+
+	});
+			
+// Define a size
+var sizeOfGoods = document.querySelectorAll('.size ul li');
+var col = Array.prototype.forEach;
+	 col.call(sizeOfGoods, function(elem){
+
+		elem.addEventListener('click', function(e){
+			col.call(sizeOfGoods, function(i){
+				i.classList.remove('active-size');
+			});
+				
+				this.classList.add('active-size');			
+		});
+
+	});
 
 $(window).on('load', function() {
 	$('.preloader').delay(1000).fadeOut('slow');
