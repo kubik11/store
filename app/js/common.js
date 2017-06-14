@@ -112,6 +112,22 @@ var col = Array.prototype.forEach;
 
 	});
 
+var loc = document.querySelector('.location');
+var html = document.querySelector('html');
+var body = document.querySelector('body');
+
+loc.addEventListener('click', popUp);
+
+function popUp(){
+
+	var block = document.createElement('div');
+	var overlay	= document.createElement('div');
+	overlay.classList.add('overlay');
+	body.appendChild(overlay);
+	block.classList.add('popup');
+	body.appendChild(block);
+}
+
 $(window).on('load', function() {
 	$('.preloader').delay(1000).fadeOut('slow');
 });
