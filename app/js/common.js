@@ -112,21 +112,127 @@ var col = Array.prototype.forEach;
 
 	});
 
-var loc = document.querySelector('.location');
+
 var html = document.querySelector('html');
 var body = document.querySelector('body');
-
-loc.addEventListener('click', popUp);
-
-function popUp(){
-
-	var block = document.createElement('div');
+var pUp = document.querySelector('.popup');
+var loc = document.querySelector('.location');
+body.addEventListener('click', popUp);
+	var contious = false;
+function popUp(e){
+	
+	//var block = document.createElement('div');
 	var overlay	= document.createElement('div');
-	overlay.classList.add('overlay');
-	body.appendChild(overlay);
-	block.classList.add('popup');
-	body.appendChild(block);
+
+	if(e.target.classList.contains('loc')){
+		overlay.classList.add('overlay');
+		body.appendChild(overlay);
+		//block.classList.add('popup');
+		//body.appendChild(block);
+		pUp.style.left = 50+'%';
+		pUp.style.opacity = 1;
+	}
+	else if(e.target.classList.contains('popup')){
+		pUp.style.opacity = 1;
+	}
+	// Определение количества товара добавленного в корзину 
+	else if(e.target.classList.contains('minus')){
+		subtraction();
+	}
+	else if(e.target.classList.contains('plus')){
+		addition();
+	}
+	//Добавление в корзину 
+	else if(e.target.classList.contains('attend')){
+		if(val>0){
+			addInBasket();
+		}
+	}
+	else if(e.target.classList.contains('ic')){
+		rotate();
+	}
+	else{
+		var first = document.querySelector('.overlay');
+		//var second = document.querySelector('.popup');
+		first.remove();
+		//second.remove();
+		pUp.style.opacity = 0;
+		setTimeout(function(){pUp.style.left = 500+'%';}, 1000);
+		//pUp.style.left = 500+'%';
+
+		//block.parentNode.removeChild('.popup');
+	}	
+	
+
 }
+// Definind of quantity
+		var count = document.querySelector('#quan');
+		var val = +count.value;
+		function addition(){	
+				val += 1;
+				count.value = val;
+			}		
+		function subtraction(){
+				if(val>0){
+				val -= 1;
+				count.value = val;
+				}
+			}
+// Addition in basket
+		function	addInBasket(){
+			var forCycle = document.querySelector('.forCycle');
+			if(forCycle.childNodes.length >1){
+			var er = document.querySelector('.cycle');
+			er.textContent = val;
+				
+			}
+			else{
+			var curr = document.createElement('div');
+			curr.classList.add('cycle');
+		
+			forCycle.appendChild(curr);
+			curr.textContent = val;
+			//curr.remove();
+			}
+		}
+
+//End of addition in buscket
+
+//Rotate
+	var contiousOfRotate = false;
+	function rotate(){
+		var elem = document.querySelector('.horizontal');
+		var emb = document.querySelector('.embeded');
+		if(contiousOfRotate == false){	
+		elem.classList.add('no-rotate');
+		emb.style.display = 'block';
+		contiousOfRotate = true;
+		}
+		else{
+		elem.classList.remove('no-rotate');
+		emb.style.display = 'none';
+		contiousOfRotate = false;
+		}
+	}
+// End of rotate
+
+
+var equalH = document.querySelectorAll('.height');
+
+	var lend = Array.prototype.forEach;
+	var h = 0;
+		
+	var total = lend.call(equalH, function(a){
+		var height = a.clientHeight;
+		if(height > h){
+			h = height;
+		}
+		
+	});
+	lend.call(equalH, function(e){
+		e.style.height = h+'px';
+	});
+	
 
 $(window).on('load', function() {
 	$('.preloader').delay(1000).fadeOut('slow');

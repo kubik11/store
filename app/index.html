@@ -46,7 +46,7 @@
 					<li><a href="#"><div><i class="fa fa-phone" aria-hidden="true"></i></div>+380 44 359-08-99<i class="fa fa-chevron-down" aria-hidden="true"></i><br><span>Пн-Вс: 9:00 - 21:00</span>
 					</a></li>
 					<li><a href="#"><div><i class="fa fa-user" aria-hidden="true"></i></div>Войти</a></li>
-					<li><a href="#"><div><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></div>Корзина</a></li>
+					<li><a href="#javascript:"><div class="forCycle"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></div>Корзина</a></li>
 				</ul>
 			
 				<form action="">
@@ -72,6 +72,34 @@
 </header>
 
 <main>
+	<div class="popup">
+		<h2>Наличие товара в бутиках One Club</h2>
+		<p class="current-dress">Платье <strong>Current Elliott</strong>, размер S</p>
+			<ul class="clearfix">
+				<li class="adress">
+					<h3>ТЦ ГЛОБУС (3 линия, 2 этаж)</h3>
+					<p class="height">г. Киев, ул. Институтская, 2
+					Тел.: +380 44 599-69-99
+					Время работы: 10:00 - 22:00</p>
+					<a href="#">Показать на карте</a>
+				</li><li class="adress">
+					<h3>ТЦ МАНУФАКТУРА</h3>
+					<p class="height">Обуховское шоссе-2, 2
+					с. Ходосеевка, Киевская область
+					Тел.: +380 44 200-98-98
+					Время работы: 10:00 - 21:00</p>
+					<a href="#">Показать на карте</a>
+				</li><li class="adress">
+					<h3>ТРЦ АТМОСФЕРА</h3>
+					<p class="height">г. Киев, Столичное шоссе, 103
+					Тел.: +380 44 393-47-07
+					Время работы: 10:00 - 21:00</p>
+					<a href="#">Показать на карте</a>
+
+				</li>
+			</ul>
+		</div>	
+	</div><!--popup-->
 	<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 no-gutter">
@@ -156,7 +184,11 @@
 						<p>Количество:</p>
 						<div class="counter">
 							<span class="minus"> - </span>
-							<div class="quantity"><span class="quan">1</span></div>
+							<div class="quantity">
+
+									<input type="text" value="1" class="quan" id="quan">
+							<!--	<span class="quan" id="quan">1</span>-->
+							</div>
 							<span class="plus"> + </span>
 
 							
@@ -178,14 +210,39 @@
 							<p>Оформить заказ по телефону</p>
 							<a href="#">+38 095 458-98-46</a><span>или</span><a href="#">+38 044 359-08-99</a>
 						</div>
-						<i class="fa fa-map-marker" aria-hidden="true"></i>
-						<a href="#javascript:" class="location">Наличие в бутиках <span>One Club</span></a>
+						<i class="fa fa-map-marker loc" aria-hidden="true"></i>
+						<a href="#javascript:" class="location loc">Наличие в бутиках <span class="loc">One Club</span></a>
 					</div><!--numbers-->
+					<div class="accordion">
+						<ul class="accordion-caption">
+							<li><a href="#javascript:">Описание и детали</a>
+								<div class="acc-icon ic">
+									<div class="vertical ic"></div>
+									<div class="horizontal ic"></div>
+								</div>
+								<ul class="embeded">
+									<li>123</li>
+									<li>123</li>
+									<li>123</li>
+									<li>123</li>
+								</ul>
+							</li>
+
+							<li><a href="#javascript:"></a>
+							</li>
+							<li><a href="#javascript:"></a>
+							</li>
+						</ul>
+					</div>
+
 					</div><!--wrap-right-->
 				</div>
 			</div>
 		</div>
 	</section>
+
+
+
 </main>
 	
 
