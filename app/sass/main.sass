@@ -373,7 +373,7 @@ main
 		&:last-child 
 			margin-bottom: 0px
 		&.active-goods-list
-			box-shadow: 0 0 0 1px $accent
+			box-shadow: 0 0 0 2px $accent
 			z-index: 1000
 .wrap-right
 	.current-eliot
@@ -539,13 +539,22 @@ main
 				text-transform: uppercase
 				color: #000
 				text-decoration: none
+				font-family: "Helvetica", sans-serif
+				font-size: 12px
+				font-weight: 100
+				line-height: 1px
 				.fa-heart
 					margin-right: 10px
 					color: #000
-					font-size: 21px
+					font-size: 15px
 			.wrap-presence
 				display: inline-block
 				position: relative
+				float: right
+				font-family: "Helvetica", sans-serif
+				font-size: 12px
+				font-weight: 100
+				line-height: 1px
 				&:hover .presence
 					opacity: 1
 					
@@ -555,11 +564,11 @@ main
 					font-family: "Helvetica", sans-serif
 					font-size: 12px
 					font-weight: 300
-					line-height: 1.2
+					line-height: 1
 					text-align: center
 					padding: 8px 13px 8px 13px
 					background-color: #eaeaea
-					left: 24%
+					left: 8%
 					top: -54px
 					opacity: 0
 					transition: opacity 0.5s ease
@@ -575,14 +584,14 @@ main
 					display: inline-block
 					padding: 10px 25px
 					background-color: $accent
-					margin-left: 22px
+					//margin-left: 22px
 					text-transform: uppercase
 					color: #fff
 					text-decoration: none
 					.fa-shopping-bag
 						margin-right: 10px
 						color: #fff
-						font-size: 21px
+						font-size: 15px
 	.numbers
 		position: relative
 		.fa-phone
@@ -604,12 +613,11 @@ main
 				margin: 0px 5px
 				display: inline-block
 		.location
-			display: inline-block
+			display: block
 			font-family: "Helvetica", sans-serif
 			font-size: 14px
 			color: #535353
 			margin-left: 30px
-			display: inline-block
 			font-family: "Helvetica", sans-serif
 			font-size: 14px
 			color: #535353
@@ -621,10 +629,16 @@ main
 			font-size: 30px
 			bottom: 2px
 			left: 0px
+	.indent
+		padding-bottom: 10px 
+		border-bottom: 1px solid #dedede
 	.accordion
 		.accordion-caption
+			margin: 0px
 			padding: 0px
-			li
+			>li
+				padding: 22px 0px
+				border-bottom: 1px solid #dedede
 				list-style: none
 				a
 					font-family: "Helvetica", sans-serif
@@ -637,24 +651,104 @@ main
 					position: relative
 					top: 11px
 					width: 15px
-					height: 15px
+					height: 17px
 					.vertical
 						position: absolute
 						top: 50%
-						width: 10px
-						height: 1px
+						width: 15px
+						height: 2px
 						background-color: #000
 					//transform: translateY(-50%)
 					.horizontal
 						position: absolute
 						top: 50%
-						width: 10px
-						height: 1px
+						width: 15px
+						height: 2px
 						background-color: #000
 						transform: rotate(90deg)
 						transition: all 0.5s ease
 				.embeded
 					display: none
+					padding: 0px
+					li
+						list-style: none
+						p
+							font-family: "Helvetica", sans-serif
+							font-size: 14px
+							font-weight: 100
+							//padding-right: 20px
+							letter-spacing: 1px
+							.strong
+								font-family: "HelveticaRoman", sans-serif
+								font-size: 14px
+								>a
+									color: #000
+									font-size: 14px
+    							text-decoration: underline !important
+							.code
+								color: #b4b4b4
+	.social
+		padding: 20px 0px
+		.social-list
+			margin: 0
+			padding: 0
+			float: right
+			li
+				list-style: none
+				display: inline-block
+				margin-left: 25px
+				a
+					text-decoration: none
+					color: #c0c0c0
+					font-family: "HelveticaRoman", sans-serif
+					font-size: 14px
+					i
+						color: #626262
+						font-size: 16px
+						&:hover
+							color: #000
+.familiar-goods
+	.gds
+		border-top: 1px solid #dedede
+		text-align: center
+		padding: 25px 0px
+		h2
+			font-family: "Helvetica", sans-serif
+			font-size: 21px
+			font-weight: 100
+			margin: 0px 0px 60px 0px
+			color: #000
+		.wrap-goods
+			text-align: center
+			width: 200px
+			margin: 0 auto
+			img
+				//display: block
+				//height: auto
+				//max-width: 100%
+				//vertical-align: middle
+				//width: 100%
+			.names
+				text-align: left
+				padding: 10px 0px 25px 0px
+				h3
+					margin: 0px
+					font-family: "HelveticaRoman", sans-serif
+					font-size: 14px
+					color: #000
+				p
+					margin: 0px 0px 15px 0px 
+					font-family: "Helvetica", sans-serif
+					font-size: 14px
+					font-weight: 100
+				strike
+					font-family: "Helvetica", sans-serif
+					font-size: 15px
+					font-weight: 100
+				span
+					font-family: "HelveticaRoman", sans-serif
+					font-size: 15px
+					color: $accent
 //.fa-chevron-down, .fa-chevron-up	
 //color: #d0d0d0
-//@import "media" // Всегда в конце
+@import "media" // Всегда в конце

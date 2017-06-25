@@ -151,6 +151,12 @@ function popUp(e){
 	else if(e.target.classList.contains('ic')){
 		rotate();
 	}
+	else if(e.target.classList.contains('ic2')){
+		rotate2();
+	}
+	else if(e.target.classList.contains('ic3')){
+		rotate3();
+	}
 	else{
 		var first = document.querySelector('.overlay');
 		//var second = document.querySelector('.popup');
@@ -178,13 +184,29 @@ function popUp(e){
 				count.value = val;
 				}
 			}
+		function lth(){
+			var curr = val.toString();
+			var len = curr.length;
+			return len;
+		}
 // Addition in basket
 		function	addInBasket(){
 			var forCycle = document.querySelector('.forCycle');
+			var vall = val.toString();
 			if(forCycle.childNodes.length >1){
 			var er = document.querySelector('.cycle');
-			er.textContent = val;
-				
+			if(lth() > 1){
+				er.style.width = 20+"px";
+				er.style.height = 20+"px";
+				er.style.fontSize = 12+"px";
+				er.textContent = val;
+			}
+			else{
+				er.style.width = 19+"px";
+				er.style.height = 19+"px";
+				er.style.fontSize = 14+"px";
+				er.textContent = val;
+				}
 			}
 			else{
 			var curr = document.createElement('div');
@@ -214,6 +236,38 @@ function popUp(e){
 		contiousOfRotate = false;
 		}
 	}
+
+	var contiousOfRotate2 = false;
+	function rotate2(){
+		var elem = document.querySelector('.horizontal.ic2');
+		var emb = document.querySelector('.embeded.ic2');
+		if(contiousOfRotate2 == false){	
+		elem.classList.add('no-rotate');
+		emb.style.display = 'block';
+		contiousOfRotate2 = true;
+		}
+		else{
+		elem.classList.remove('no-rotate');
+		emb.style.display = 'none';
+		contiousOfRotate2 = false;
+		}
+	}
+
+	var contiousOfRotate3 = false;
+	function rotate3(){
+		var elem = document.querySelector('.horizontal.ic3');
+		var emb = document.querySelector('.embeded.ic3');
+		if(contiousOfRotate3 == false){	
+		elem.classList.add('no-rotate');
+		emb.style.display = 'block';
+		contiousOfRotate3 = true;
+		}
+		else{
+		elem.classList.remove('no-rotate');
+		emb.style.display = 'none';
+		contiousOfRotate3 = false;
+		}
+	}
 // End of rotate
 
 
@@ -232,6 +286,12 @@ var equalH = document.querySelectorAll('.height');
 	lend.call(equalH, function(e){
 		e.style.height = h+'px';
 	});
+	
+//Resize
+//	window.onresize = function(){
+		var screenW = document.body.clientWidth ;
+	alert(screenW);
+//	}
 	
 
 $(window).on('load', function() {
