@@ -108,6 +108,7 @@ body
 	height: 100%
 	background-color: #000
 	opacity: 0.3
+	z-index: 2
 .no-gutter
 	padding-left: 0px
 	padding-right: 0px
@@ -127,7 +128,7 @@ header
 					max-width: 325px
 		.wrap-shares
 			position: absolute
-			bottom: 22px
+			bottom: 24px
 			left: 50%
 			transform: translateX(-65%)
 			.outer-shares
@@ -138,7 +139,7 @@ header
 					background-color: #e5e5e5 
 					display: inline-block
 					position: absolute
-					top: 0
+					top: 4px
 					left: 40px
 					width: 150px
 					//text-align: center
@@ -270,7 +271,10 @@ header
 			li
 				list-style: none
 				display: inline-block
-				padding: 18px 150px 18px 0px
+				padding: 18px 0px
+				max-width: 16.6%
+				width: 16.6%
+				text-align: center
 				&:last-child
 					padding-right: 0px
 				a
