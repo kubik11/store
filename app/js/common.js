@@ -272,10 +272,10 @@ function popUp(e){
 
 
 var equalH = document.querySelectorAll('.height');
-
+var equalH2 = document.querySelectorAll('.height2');
 	var lend = Array.prototype.forEach;
 	var h = 0;
-		
+	var h2 = 0;	
 	var total = lend.call(equalH, function(a){
 		var height = a.clientHeight;
 		if(height > h){
@@ -286,11 +286,20 @@ var equalH = document.querySelectorAll('.height');
 	lend.call(equalH, function(e){
 		e.style.height = h+'px';
 	});
-	
+	var total2 = lend.call(equalH2, function(a){
+		var height = a.clientHeight;
+		if(height > h2){
+			h2 = height;
+		}
+		
+	});
+	lend.call(equalH2, function(e){
+		e.style.height = h2+'px';
+	});
 //Resize
 //	window.onresize = function(){
 		var screenW = document.body.clientWidth ;
-	alert(screenW);
+	//alert(screenW);
 //	}
 	
 
