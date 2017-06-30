@@ -36,6 +36,21 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	opacity: 1
+.chev
+	width: 58px
+	height: 58px
+	background-color: #cdcdcdcd
+	position: absolute
+	right: -60px
+	top: 30px
+	border: 1px solid #ccc
+	text-align: center
+	line-height: 58px
+	transition: all 0.5s ease
+	&:hover
+		background-color: #Fcccce
+	.fa
+		font-size: 20px
 .no-rotate
 	transform: rotate(0deg) !important
 .popup
@@ -784,6 +799,7 @@ main
 		.info-list
 			margin: 0px
 			padding: 0px
+			position: relative
 			li
 				list-style: none
 				display: inline-block
@@ -792,7 +808,10 @@ main
 				text-align: center
 				border-right: 1px solid #999
 				float: left
-				&:last-child
+				&:nth-child(3)
+					border-right: none
+					border-left: none
+				&:nth-child(4)
 					border-right: none
 				h2
 					font-size: 17px 

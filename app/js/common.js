@@ -135,6 +135,10 @@ function popUp(e){
 	else if(e.target.classList.contains('popup')){
 		pUp.style.opacity = 1;
 	}
+	//Event to up of the page
+	else if(e.target.classList.contains('chev')){
+		upPage();
+	}
 	// Определение количества товара добавленного в корзину 
 	else if(e.target.classList.contains('minus')){
 		subtraction();
@@ -301,7 +305,34 @@ var equalH2 = document.querySelectorAll('.height2');
 		var screenW = document.body.clientWidth ;
 	//alert(screenW);
 //	}
-	
+	// Scrolling
+	var footer = document.querySelector('.info');
+	var info = document.querySelector('.info-list');
+	var trig = false;
+	window.onscroll = function(){
+	var placement = footer.getBoundingClientRect().top;
+		if(placement<430 && !trig){
+		
+		var chevron = document.createElement('div');
+		var icon = document.createElement('i');
+		chevron.classList.add('chev');
+		icon.classList.add('fa');
+		icon.classList.add('fa-chevron-up');
+		chevron.appendChild(icon);
+		info.appendChild(chevron);
+		trig = true;
+		}
+		else if(placement>430 && trig){
+			
+			var appended = document.querySelector('.chev');
+			appended.parentNode.removeChild(appended);
+			trig = false;
+		}
+	}
+	function upPage(){
+		window.scrollTo(0, 0);
+	}
+	// end of scrolling
 
 $(window).on('load', function() {
 	$('.preloader').delay(1000).fadeOut('slow');
