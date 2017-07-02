@@ -302,8 +302,8 @@ var equalH2 = document.querySelectorAll('.height2');
 	});
 //Resize
 //	window.onresize = function(){
-		var screenW = document.body.clientWidth ;
-	//alert(screenW);
+		var screenW = screen.width ;
+	alert(screenW);
 //	}
 	// Scrolling
 	var footer = document.querySelector('.info');
