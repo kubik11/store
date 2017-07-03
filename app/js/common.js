@@ -139,6 +139,10 @@ function popUp(e){
 	else if(e.target.classList.contains('chev')){
 		upPage();
 	}
+	// hamburger 
+	else if(e.target.classList.contains('ham')||e.target.classList.contains('innerHam')){
+		mobileList();
+	}
 	// Определение количества товара добавленного в корзину 
 	else if(e.target.classList.contains('minus')){
 		subtraction();
@@ -301,10 +305,42 @@ var equalH2 = document.querySelectorAll('.height2');
 		e.style.height = h2+'px';
 	});
 //Resize
-//	window.onresize = function(){
-		var screenW = screen.width ;
-	alert(screenW);
-//	}
+	window.onresize = function(){
+		var screenW = window.innerWidth ;
+		var currentHam = document.querySelector('.wrap-logo');
+		if (screenW < 480 && inCurrHam()){
+			phone();
+		}
+
+		function inCurrHam(){
+			var trigger;
+			for( var i = 0; i < currentHam.children.length; i++){
+				if (currentHam.children[i].classList.contains('ham')){
+					trigger = false;
+				}
+				else{
+					trigger =  true;
+				}
+			}
+			return trigger;
+		}
+	}
+
+	function phone(){
+		var head = document.querySelector('.wrap-logo');
+		var hamburger = document.createElement('div');
+		var innerHamburger = document.createElement('div');
+		innerHamburger.classList.add('innerHam');
+		hamburger.classList.add('ham');
+		hamburger.appendChild(innerHamburger);
+		head.appendChild(hamburger);
+	}
+
+	function mobileList(){
+		var innerH = document.querySelector('.innerHam');
+		innerH.classList.toggle('innerHam-active');
+		innerH.classList.toggle('innerHam');
+	}
 	// Scrolling
 	var footer = document.querySelector('.info');
 	var info = document.querySelector('.info-list');
