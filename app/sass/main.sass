@@ -64,32 +64,8 @@ body
 		position: absolute
 		top: 0
 		left: 0
-		&::before
-			content: ""
-			display: block
-			position: absolute
-			top: 8px
-			left: 0
-			width: 100%
-			height: 1px
-			background-color: red
-		&::after
-			content: ""
-			display: block
-			position: absolute
-			top: 16px
-			left: 0
-			height: 1px
-			width: 100%
-			background-color: red
-.innerHam-active
-	width: 100%
-	height: 1px 
-	background-color: yellow
-	position: absolute
-	top: 0
-	left: 0
-	&::before
+		transition: all 0.3s ease
+	.innerHam2
 		content: ""
 		display: block
 		position: absolute
@@ -97,8 +73,10 @@ body
 		left: 0
 		width: 100%
 		height: 1px
-		background-color: yellow
-	&::after
+		background-color: red
+		transition: all 1s ease
+
+	.innerHam3
 		content: ""
 		display: block
 		position: absolute
@@ -106,7 +84,44 @@ body
 		left: 0
 		height: 1px
 		width: 100%
+		background-color: red
+		transition: all 0.3s ease
+
+.innerHam-active
+	.innerHam
+		width: 29px
+		height: 1px 
 		background-color: yellow
+		position: absolute
+		top: 8px
+		left: -3px
+		transform: rotate(45deg)
+		transition: all 0.3s ease
+	.innerHam2
+		content: ""
+		display: block
+		position: relative
+		top: 8px
+		left: 0px
+		width: 100%
+		height: 1px
+		background-color: yellow
+		transform: rotate(720deg)
+		opacity: 0
+		transition: all 1s ease
+	.innerHam3
+		content: ""
+		display: block
+		position: relative
+		top: 7px
+		left: -3px
+		height: 1px
+		width: 29px
+		background-color: yellow
+		transform: rotate(-45deg)
+		transition: all 0.3s ease
+.navigation-active
+	display: block !important
 .no-rotate
 	transform: rotate(0deg) !important
 .popup
