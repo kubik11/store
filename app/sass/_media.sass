@@ -224,6 +224,33 @@
 	.goods-list li 
 		margin-bottom: 0px
 		margin-right: 10px
+	.images	
+		text-align: center
+	.wrap-right
+		padding: 0px 14px
+	.wrap-right .current-eliot
+		position: relative
+		border-bottom: none
+		&::after
+			content: ""
+			display: block
+			position: absolute
+			width: 120%
+			height: 60px
+			background-color: #ededed
+			left: -10%
+			bottom: 15px
+			z-index: -10
+	.wrap-right .current-eliot .sale span
+		font-size: 18px
+	.wrap-right .current-eliot .sale
+		height: 45px
+		width: 45px
+		bottom: 19px
+	.wrap-right .current-eliot h3
+		margin: 20px 0px 30px
+	.wrap-right .current-eliot h2
+		color: #000
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px )
 	/**/
